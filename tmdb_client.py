@@ -1,8 +1,10 @@
 
 from ctypes import cast
 import requests 
+import os
 
-API_TOKEN = "?api_key=0747dfbc9a2d7974a8bba5cd07145c24"
+API_TOKEN = os.environ.get("TMDB_API_TOKEN", "")
+#API_TOKEN = "?api_key=0747dfbc9a2d7974a8bba5cd07145c24"
 
 def get_popular_movies():
     endpoint = "https://api.themoviedb.org/3/movie/popular?api_key=0747dfbc9a2d7974a8bba5cd07145c24"
